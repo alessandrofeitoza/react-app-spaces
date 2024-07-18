@@ -1,0 +1,22 @@
+{
+    "booking": [
+        {
+            "id": 1,
+            "customer": "Natan",
+            "email": "natan@examplo.com",
+            "phone": "11 98765-4321",
+            "begin_data": "2024-07-18",
+            "end_date": "2024-07-20",
+            "status": "disponivel"
+        },
+        {
+            "id": 2,
+            "customer": "joaozim",
+            "email": "joaozim@examplo.com",
+            "phone": "85 98765-0000",
+            "begin_data": "2024-07-15",
+            "end_date": "2024-07-16",
+            "status": "reservado"
+        }
+    ]
+}
