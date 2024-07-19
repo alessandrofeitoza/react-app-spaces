@@ -102,11 +102,13 @@ export default function Reservation() {
           </Grid>
         </Grid>
         <Button
+          sizeLarge
+          fullWidth
           type="submit"
           variant="contained"
           color="primary"
           className="button"
-          style={{ marginTop: '20px' }}
+          style={{ marginTop: '20px', width: '100%' }}
           aria-label="Reservar"
         >
           Reservar

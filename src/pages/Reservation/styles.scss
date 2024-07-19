@@ -11,19 +11,12 @@
     margin-bottom: 16px;
   }
   
-  .button-container {
-    display: flex;
-    justify-content: center; /* Centraliza o botão horizontalmente */
-    margin-top: 20px;
-  }
-  
   .button {
     width: 100%;
-    max-width: 300px;
-    background-color: #007bff;
+    background-color: #cfd0d2bd;
     color: white;
     &:hover {
-      background-color: #0056b3;
+      background-color: #ffffff;
     }
   }
   
