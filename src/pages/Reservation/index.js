@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+import { TextField, Button, Typography, Container, Grid } from '@material-ui/core';
 import './styles.scss';
 
 export default function Reservation() {
@@ -33,60 +30,84 @@ export default function Reservation() {
         Reserve seu horário
       </Typography>
       <form onSubmit={handleSubmit}>
-        <TextField
-          label="Nome"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="textField"
-          required
-        />
-        <TextField
-          label="Email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          type="email"
-          className="textField"
-          required
-        />
-        <TextField
-          label="Telefone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="textField"
-          required
-        />
-        <TextField
-          label="Data"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          type="date"
-          className="textField"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          required
-        />
-        <TextField
-          label="Hora"
-          name="time"
-          value={formData.time}
-          onChange={handleChange}
-          type="time"
-          className="textField"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          required
-        />
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Nome"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              fullWidth
+              variant='outlined'
+              required
+              aria-label="Nome"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              type="email"
+              fullWidth
+              variant='outlined'
+              required
+              aria-label="Email"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Telefone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              fullWidth
+              variant='outlined'
+              required
+              aria-label="Telefone"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Data e Hora da Entrada"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              type="datetime-local"
+              fullWidth
+              variant='outlined'
+              InputLabelProps={{
+                shrink: true,
+              }}
+              required
+              aria-label="Data e Hora"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+          <TextField
+              label="Data e Hora da Saída"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              type="datetime-local"
+              fullWidth
+              variant='outlined'
+              InputLabelProps={{
+                shrink: true,
+              }}
+              required
+              aria-label="Data e Hora"
+            />
+          </Grid>
+        </Grid>
         <Button
           type="submit"
           variant="contained"
           color="primary"
           className="button"
+          style={{ marginTop: '20px' }}
+          aria-label="Reservar"
         >
           Reservar
         </Button>
