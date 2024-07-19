@@ -16,15 +16,46 @@ export default function Reservation() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form data submitted:', formData);
+
+    const bookingData = {
+      customer: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      begin_data: formData.date,
+      end_date: formData.date,
+      status: 'reservado',
+    };
+
+    fetch('http://localhost:3000/booking', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bookingData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Reserva criada com sucesso:', data);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          date: '',
+          time: '',
+        });
+      })
+      .catch((error) => {
+        console.error('Erro ao criar reserva:', error);
+      });
   };
 
   return (
